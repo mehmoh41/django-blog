@@ -1,0 +1,173 @@
+{% extends 'base.html' %} {% load static %} {% block title %} My Blog {%endblock %} {% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/index.css' %}" />
+{% endblock %} {% block content %}
+
+<section id="welcome">
+  <div class="container-fluid">
+    <div class="container">
+      <div
+        class="d-sm-flex align-items-center justify-content-between w-100"
+        style="height: 100vh"
+      >
+        <div class="col-md-4 mx-auto mb-4 mb-sm-0 headline">
+          <span class="text-secondary text-uppercase">Subheadline</span>
+          <h1 class="display-4 my-4 font-weight-bold">
+            Enter Your <span style="color: #9b5de5">Headline Here</span>
+          </h1>
+          <a
+            href="#"
+            class="btn px-5 py-3 text-white mt-3 mt-sm-0"
+            style="border-radius: 30px; background-color: #9b5de5"
+            >Get Started</a
+          >
+        </div>
+        <!-- in mobile remove the clippath -->
+        <div
+          class="col-md-8 h-100 clipped"
+          
+        >
+            <img src="{% static 'blog/images/me.jpg' %}" alt="" width="700" height="600">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="latest-post">
+  <h2 class="my-5 pb-5 text-center">All Posts</h2>
+
+  <div class="container my-4">
+    
+      <div class="row">
+          {% for post in posts %}
+              <div class="col-md-4 my-3">
+                  <a href="{% url "single" post.slug %}">
+                      {% include "blog/includes/post.html"%}
+                  </a>
+              </div>
+          {% endfor %}
+      </div>
+  </div>
+
+   
+</section>
+
+
+<section id="about">
+  <div class="container my-5">
+    <section id="steps">
+      <div class="text-center mb-5">
+        <span>ME</span>
+        <h2 class="font-weight-bold display-4">
+          What I <span style="color: #9b5de5">Do?</span>
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="bg-light position-relative px-3 my-5">
+            <div
+              class="
+                font-weight-bold
+                circle
+                text-white
+                rounded-circle
+                d-flex
+                align-items-center
+                justify-content-center
+                mx-auto
+                position-relative
+                border border-white
+              "
+              style="
+                width: 60px;
+                height: 60px;
+                top: -30px;
+                border-width: 4px !important;
+                background-color: #9b5de5;
+              "
+            >
+              1
+            </div>
+            <div class="px-3 text-center pb-3">
+              <h4>Headline</h4>
+              <p class="font-weight-light my-3">
+                Lorem ipsum dolor sit consectetur adipisicing elit. Alias amet
+                deleniti et fugit iusto nesciunt.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="bg-light position-relative px-3 my-5">
+            <div
+              class="
+                font-weight-bold
+                circle
+                text-white
+                rounded-circle
+                d-flex
+                align-items-center
+                justify-content-center
+                mx-auto
+                position-relative
+                border border-white
+              "
+              style="
+                width: 60px;
+                height: 60px;
+                top: -30px;
+                border-width: 4px !important;
+                background-color: #9b5de5;
+              "
+            >
+              2
+            </div>
+            <div class="px-3 text-center pb-3">
+              <h4>Headline</h4>
+              <p class="font-weight-light my-3">
+                Lorem ipsum dolor sit consectetur adipisicing elit. Alias amet
+                deleniti et fugit iusto nesciunt.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="bg-light position-relative px-3 my-5">
+            <div
+              class="
+                font-weight-bold
+                circle
+                text-white
+                rounded-circle
+                d-flex
+                align-items-center
+                justify-content-center
+                mx-auto
+                position-relative
+                border border-white
+              "
+              style="
+                width: 60px;
+                height: 60px;
+                top: -30px;
+                border-width: 4px !important;
+                background-color: #9b5de5;
+              "
+            >
+              3
+            </div>
+            <div class="px-3 text-center pb-3">
+              <h4>Headline</h4>
+              <p class="font-weight-light my-3">
+                Lorem ipsum dolor sit consectetur adipisicing elit. Alias amet
+                deleniti et fugit iusto nesciunt.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+{% endblock %}

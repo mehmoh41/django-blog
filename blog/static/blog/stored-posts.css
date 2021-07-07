@@ -1,0 +1,35 @@
+#read-later {
+    margin: 5rem auto 3rem auto;
+    padding: 2rem ;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    width: 90%;
+    max-width: 20rem;
+}
+#read-later ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+#read-later li {
+    
+    margin: 1rem 0;
+
+}
+#read-later a {
+    display: block;
+    padding: 1rem;
+    width: 100%;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    color: black;
+    font-weight: bold;
+
+}
+#read-later a:hover ,
+#read-later a:active
+{
+background-color: #ccc;
+}

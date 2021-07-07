@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} My All Posts {%endblock%}
+ {% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/posts.css' %}" />
+{% endblock %} 
+{% block content %}
+<section id="posts">
+  <h2 class="my-5 pb-5 text-center">All Posts</h2>
+
+  <div class="container my-4">
+    
+      <div class="row">
+                
+                 {% for post in all_posts %}
+              <div class="col-md-4 my-3">
+                  <a href="{% url "single" post.slug %}">
+                      {% include "blog/includes/post.html" %}
+                  </a>
+              </div>
+          {% endfor %}                
+      </div>
+  </div>
+
+   
+</section>
+{% endblock %}
